@@ -1,1 +1,1 @@
-type LookUp<U, T> = any
+type LookUp<U extends { type: string }, T extends string> = { [K in U as K['type']]: K }[T]
